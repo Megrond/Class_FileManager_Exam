@@ -5,20 +5,19 @@ void Menu::display()
 {
 	cout << endl;
 	cout << "Текущий путь: " << currentPath << endl; 
-	cout << "1. Показать диски" << endl;
-	cout << "2. Показать содержимое" << endl;
-	cout << "3. Создать папку" << endl;
-	cout << "4. Создать файл" << endl;
-	cout << "5. Удалить папку" << endl;
-	cout << "6. Удалить файл" << endl;
-	cout << "7. Переименовать папку" << endl;
-	cout << "8. Переименовать файл" << endl;
-	cout << "9. Скопировать папку" << endl;
-	cout << "10. Скопировать файл" << endl;
-	cout << "11. Переместить папку" << endl;
-	cout << "12. Переместить файл" << endl;
-	cout << "13. Рассчитать размер" << endl;
-	cout << "14. Поиск по маске" << endl;
+	cout << "1. Показать содержимое" << endl;
+	cout << "2. Создать папку" << endl;
+	cout << "3. Создать файл" << endl;
+	cout << "4. Удалить папку" << endl;
+	cout << "5. Удалить файл" << endl;
+	cout << "6. Переименовать папку" << endl;
+	cout << "7. Переименовать файл" << endl;
+	cout << "8. Скопировать папку" << endl;
+	cout << "9. Скопировать файл" << endl;
+	cout << "10. Переместить папку" << endl;
+	cout << "11. Переместить файл" << endl;
+	cout << "12. Рассчитать размер" << endl;
+	cout << "13. Поиск по маске" << endl;
 	cout << "0. Выход" << endl;
 	cout << endl;
 }
@@ -36,12 +35,9 @@ void Menu::run()
 		switch (choice)
 		{
 		case 1:
-			fileManager.showDrives();
-			break;
-		case 2:
 			fileManager.showContent(currentPath);
 			break;
-		case 3:
+		case 2:
 		{
 			string folderName;
 			cout << "Введите имя папки: ";
@@ -49,7 +45,7 @@ void Menu::run()
 			fileManager.createFolder(currentPath, folderName);
 			break;
 		}
-		case 4:
+		case 3:
 		{
 			string fileName;
 			cout << "Введите имя файла: ";
@@ -57,7 +53,7 @@ void Menu::run()
 			fileManager.createFile(currentPath, fileName);
 			break;
 		}
-		case 5:
+		case 4:
 		{
 			string folderName;
 			cout << "Введите имя папки: ";
@@ -65,7 +61,7 @@ void Menu::run()
 			fileManager.deleteFolder(currentPath + folderName);
 			break;
 		}
-		case 6:
+		case 5:
 		{
 			string fileName;
 			cout << "Введите имя файла: ";
@@ -73,7 +69,7 @@ void Menu::run()
 			fileManager.deleteFile(currentPath + fileName);
 			break;
 		}
-		case 7:
+		case 6:
 		{
 			string folderName, newFolderName;
 			cout << "Введите имя папки: ";
@@ -83,7 +79,7 @@ void Menu::run()
 			fileManager.renameFolder(currentPath + folderName, newFolderName);
 			break;
 		}
-		case 8:
+		case 7:
 		{
 			string fileName, newFileName;
 			cout << "Введите имя файла: ";
@@ -93,7 +89,7 @@ void Menu::run()
 			fileManager.renameFile(currentPath + fileName, newFileName);
 			break;
 		}
-		case 9:
+		case 8:
 		{
 			string source, destination;
 			cout << "Войдите в исходную папку: ";
@@ -103,7 +99,7 @@ void Menu::run()
 			fileManager.copyFolder(currentPath + source, currentPath + destination);
 			break;
 		}
-		case 10:
+		case 9:
 		{
 			string source, destination;
 			cout << "Введите исходный файл: ";
@@ -113,7 +109,7 @@ void Menu::run()
 			fileManager.copyFile(currentPath + source, currentPath + destination);
 			break;
 		}
-		case 11:
+		case 10:
 		{
 			string source, destination;
 			cout << "Войдите в исходную папку: ";
@@ -123,7 +119,7 @@ void Menu::run()
 			fileManager.moveFolder(currentPath + source, currentPath + destination);
 			break;
 		}
-		case 12:
+		case 11:
 		{
 			string source, destination;
 			cout << "Введите исходный файл: ";
@@ -133,7 +129,7 @@ void Menu::run()
 			fileManager.moveFile(currentPath + source, currentPath + destination);
 			break;
 		}
-		case 13:
+		case 12:
 		{
 			string path;
 			cout << "Введите путь к файлу или папке: ";
@@ -141,7 +137,7 @@ void Menu::run()
 			fileManager.calculateSize(currentPath + path);
 			break;
 		}
-		case 14:
+		case 13:
 		{
 			string mask;
 			cout << "Введите маску: ";

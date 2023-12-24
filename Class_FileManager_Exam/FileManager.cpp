@@ -1,13 +1,5 @@
 ﻿#include "FileManager.h"
 
-void FileManager::showDrives()
-{
-	for (const auto& entry : fs::directory_iterator("/"))
-	{
-		cout << "Перебор записей: " << entry.path().root_name() << endl;
-	}
-}
-
 void FileManager::showContent(const string& path)
 {
 	for (const auto& entry : fs::directory_iterator(path))

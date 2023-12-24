@@ -10,7 +10,6 @@ namespace fs = filesystem;
 class FileManager
 {
 public:
-	void showDrives();
 	void showContent(const string& path);
 	bool createFolder(const string& path, const string& folderName);
 	bool createFile(const string& path, const string& fileName);
